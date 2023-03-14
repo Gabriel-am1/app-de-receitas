@@ -1,3 +1,153 @@
-.checked {
-  text-decoration: line-through solid black;
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;1,500&display=swap') ;
+
+@media ( min-width : 0 ) {
+
+  .main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20%;
+    width: 100%;
+  }
+
+  .main .checked {
+    text-decoration: line-through solid black;
+  }
+
+  .main .divInfoHeaderDetails {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .main .divInfoHeaderDetails div {
+    align-items: center;
+    display: flex;
+    gap: 19px;
+    justify-content: center;
+    margin-left: 19px;
+    margin-right: 19px;
+  }
+
+  .main .divInfoHeaderDetails div button {
+    background: transparent;
+    border: none;
+  }
+
+  .main .divInfoHeaderDetails div img {
+    height: 33px;
+    width: 33px;
+  }
+
+  .main .divInfoHeaderDetails div h4 {
+    color: #fcc436;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px;
+    margin-top: 6px;
+    vertical-align: middle;
+  }
+
+  .main .divTitleHeader {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+  }
+
+  .main .divTitleHeader h2 {
+    color: white;
+    font-family: Epilogue , sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.105em;
+    line-height: 20px;
+    margin: 0;
+    margin-left: -35px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 50%;
+    z-index: 1;
+  }
+
+  .main .imgBackGroundHeader {
+    filter: brightness(50%);
+    height: 162px;
+    width: 100%;
+  }
+
+  .main .pIngredientes {
+    color: #1a1b1c;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    margin-top: 35px;
+    width: 90%;
+  }
+
+  .main ul {
+    background: white;
+    border: 0.554px solid #b1b1b1;
+    border-radius: 5.351px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .main ul input {
+    margin-bottom: 2.5px;
+    margin-right: 10px;
+    margin-top: 2.5px;
+  }
+
+  .main .pInstructions {
+    background: white;
+
+    /* background-color: red; */
+    border: 0.554px solid #b1b1b1;
+    border-radius: 5.351px;
+    padding: 19px;
+    text-align: justify;
+    width: 95%;
+  }
+
+  .divSeparation {
+    display: flex;
+    height: 300px;
+    width: 100%;
+  }
+
+  .buttonStartRecipe {
+    background: #fcc436;
+    border: none;
+    border-radius: 5px;
+    bottom: 0;
+    color: white;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    height: 40px;
+    left: 50%;
+    letter-spacing: 0.03em;
+    line-height: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    position: fixed;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    width: 336px;
+  }
 }

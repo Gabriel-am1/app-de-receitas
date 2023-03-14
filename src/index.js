@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DefaultProvider from './context/DefaultProvider';
-import './styles/css/index.css';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM
   .createRoot(document.getElementById('root'))

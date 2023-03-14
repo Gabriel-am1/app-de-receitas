@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;1,500&display=swap') ;
+
+@media ( min-width : 0 ) {
+
+  .main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main h2 {
+    color: #1a1b1c;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 41px;
+    text-align: center;
+  }
+
+  .main button {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #797d86;
+    display: flex;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    gap: 22px;
+    letter-spacing: 0.03em;
+    line-height: 16px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    width: 217.44px;
+  }
+
+  .main button img {
+    height: 38.69px;
+    width: 38.69px;
+  }
+
+  .main hr {
+    width: 250px;
+  }
+}

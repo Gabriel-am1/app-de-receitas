@@ -1,3 +1,88 @@
-.teste {
-  background-color: rgb(211, 211, 221);
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;1,500&display=swap') ;
+
+@media ( min-width : 0 ) {
+
+  .header {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header .divHeader {
+    align-items: center;
+    background: #fcdc36;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .header .divHeader .imageHomeRecipeApp {
+    height: 39.28px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    width: 172.5px;
+  }
+
+  .header .divHeader div button {
+    background: transparent;
+    border: none;
+    margin-right: 16.15px;
+  }
+
+  .divHeader div button img {
+    height: 26.85px;
+    width: 26.85px;
+  }
+
+  .divHeader div a img {
+    height: 28.71px;
+    width: 28.71px;
+  }
+
+  .header .divTitleAndSearch {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    margin-top: 31px;
+  }
+
+  .header .divTitleAndSearch img {
+    height: 29.33px;
+    margin-bottom: 13.67px;
+    width: 40.33px;
+  }
+
+  .header .divTitleAndSearch h1 {
+    color: #41197f;
+    font-family: Epilogue , sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 0.105em;
+    line-height: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    width: auto;
+  }
+
+  .header .divTitleAndSearch input {
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    height: 40px;
+    padding-bottom: 13px;
+    padding-left: 17.38px;
+    padding-top: 13px;
+    width: 338px;
+    z-index: 1;
+  }
+
+  .header .divTitleAndSearch input::placeholder {
+    color: #797d86;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 14px;
+  }
 }

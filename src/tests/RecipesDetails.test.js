@@ -1,80 +1,48 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
+import { wait } from '@testing-library/user-event/dist/utils';
+import userEvent from '@testing-library/user-event';
 import renderWithRouter from './helpers/renderWithRouter';
 import App from '../App';
 import DefaultProvider from '../context/DefaultProvider';
-import MockLocalStorage from './helpers/mock/MockLocalStorage';
-
-// const localStoragedoRecipes = {
-//   doneRecipes: [
-//     {
-//       id: '52977',
-//       type: 'drink',
-//       nationality: 'brazilian',
-//       category: 'Categoria',
-//       alcoholicOrNot: 'Non Alcoholic',
-//       name: 'Sopa',
-//       image: 'Link da imagem',
-//       doneDate: '2022/01/01',
-//       tags: ['muito boa', 'dias frios'],
-//     },
-//     {
-//       id: '52978',
-//       type: 'meal',
-//       nationality: 'brazilian',
-//       category: 'Categoria',
-//       alcoholicOrNot: 'Non Alcoholic',
-//       name: 'Sopa',
-//       image: 'Link da imagem',
-//       doneDate: '2022/01/01',
-//       tags: ['difícil', 'para fazer com amigos', 'dias quentes'],
-//     },
-//   ],
-// };
-
-const mockLocalStorage1 = () => {
-  Object.defineProperty(window, 'localStorage', {
-    value: new MockLocalStorage(),
-  });
-};
 
 describe('All tests from RecipesDetails', () => {
-  it('xXx xXx xXx', async () => {
-    renderWithRouter(<DefaultProvider><App /></DefaultProvider>, { initialEntries: ['/meals/52977'] });
+  const PATH = '/meals/53013';
 
-    const startRecBtn = screen.getByRole('button', {
-      name: /start recipes/i,
-    });
+  it('', async () => {
+    const START_RECIPE_BTN = 'start-recipe-btn';
+    const { history } = renderWithRouter(
+      <DefaultProvider><App /></DefaultProvider>,
+      { initialEntries: [PATH] },
+    );
 
-    expect(startRecBtn).toBeInTheDocument();
-  });
-});
+    await wait(2000);
 
-describe('All tests from RecipesDetails', () => {
-  beforeEach(() => {
-    mockLocalStorage1();
-  });
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-  it('xXx xXx xXx', async () => { //                                                   Da pra melhorar?
-    renderWithRouter(<DefaultProvider><App /></DefaultProvider>, { initialEntries: ['/meals/52977'] });
+    userEvent.click(screen.getByTestId(START_RECIPE_BTN));
+    userEvent.click(screen.getByTestId('favorite-btn'));
+    userEvent.click(screen.getByTestId('favorite-btn'));
+    userEvent.click(screen.getByTestId('share-btn'));
 
-    const recipePic = screen.getByTestId('recipe-photo');
-    const recipeTitle = screen.getByTestId('recipe-title');
-    const recipeCateg = screen.getByTestId('recipe-category');
-    const recipeInstruc = screen.getByTestId('instructions');
+    await wait(2000);
+    userEvent.click(screen.getByText(/400g of minced beef/i));
 
-    const shareBtn = screen.getByRole('button', {
-      name: /compartilhar/i,
-    });
+    history.push(PATH);
+    await wait(2000);
+    expect(screen.getByRole('button', {
+      name: /continue recipes/i,
+    })).toBeInTheDocument();
 
-    expect(recipePic).toBeInTheDocument();
-    expect(recipeTitle).toBeInTheDocument();
-    expect(recipeCateg).toBeInTheDocument();
-    expect(recipeInstruc).toBeInTheDocument();
+    userEvent.click(screen.getByTestId(START_RECIPE_BTN));
+    await wait(2000);
+    userEvent.click(screen.getByTestId('0-ingredient-step'));
 
-    expect(shareBtn).toBeInTheDocument();
-  });
+    for (let i = 0; i < 14; i += 1) {
+      userEvent.click(screen.getByTestId(`${i}-ingredient-step`));
+    }
+
+    userEvent.click(screen.getByTestId('finish-recipe-btn'));
+    history.push(PATH);
+    await wait(2000);
+    expect(screen.queryByTestId(START_RECIPE_BTN)).not.toBeInTheDocument();
+  }, 30000);
 });

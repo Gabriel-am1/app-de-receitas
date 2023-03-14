@@ -1,13 +1,12 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
 import Recipes from './Recipes';
+import styles from '../styles/css/Search.module.css';
 
 function Search() {
   return (
-    <div>
-      <SearchBar />
+    <main className={ styles.main }>
       <Recipes />
-    </div>
+    </main>
   );
 }
 
